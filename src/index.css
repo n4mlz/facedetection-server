@@ -1,0 +1,25 @@
+table {
+    position: relative;
+    left: 80px;
+    border-collapse:  collapse;
+}
+tr:nth-child(even){
+    background-color: #eeeeee;
+}
+tr:nth-child(odd){
+    background-color: #ffffff;
+}
+th {
+    width: 80px;
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+td {
+    height: 80px;
+    vertical-align: bottom;
+}
+.time {
+    position: fixed;
+    left: 6px;
+    z-index: 1;
+}

@@ -23,3 +23,13 @@ td {
     left: 6px;
     z-index: 1;
 }
+input[type="date"] {
+    position: relative;
+    padding: 0 10px;
+    width: 40px;
+    height: 36px;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #999;
+  }

@@ -6,7 +6,9 @@ function makeTime() {
     var tr = document.createElement('tr');
     if (i == 0) {
       var th = document.createElement('th');
-      th.textContent = 'time';
+      timeSelector = document.createElement('input');
+      timeSelector.type = 'date';
+      th.appendChild(timeSelector);
       tr.appendChild(th);
     } else {
     var td = document.createElement('td');

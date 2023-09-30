@@ -7,7 +7,9 @@ function makeTime() {
     if (i == 0) {
       var th = document.createElement('th');
       timeSelector = document.createElement('input');
+      timeSelector.setAttribute('id', 'timeSelector');
       timeSelector.type = 'date';
+      timeSelector.addEventListener('change', dot);
       th.appendChild(timeSelector);
       tr.appendChild(th);
     } else {
@@ -39,15 +41,26 @@ function makeTable(keyList) {
   document.getElementsByClassName('table')[0].appendChild(table);
 };
 
+function dot() {
+  var timeSelector = document.getElementById('timeSelector');
+  var now = Math.floor(timeSelector.valueAsDate.getTime()/1000);
+  console.log(now);
+  // for (let i = 0; i < Object.keys(timeElement).length; i++) {
+    
+  // }
+}
+
 const url = "http://localhost:3000/json";
+var timeData;
 
 fetch(url)
   .then((response) => {
     return response.json();
   })
   .then((data) => {
+    timeData = data;
     makeTime();
-    makeTable(Object.keys(data));
+    makeTable(Object.keys(timeData));
     var timeElement = document.getElementsByClassName('time')[0];
     window.addEventListener('scroll', _handleScroll, false);
     function _handleScroll() {

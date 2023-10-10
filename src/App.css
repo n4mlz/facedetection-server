@@ -1,42 +1,51 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+table {
+  position: relative;
+  left: 80px;
+  border-collapse: collapse;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.point {
+  width: 10px;
+  height: 10px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+tr {
+  height: 60px;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tr:nth-child(even) {
+  background-color: #eeeeee;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+tr:nth-child(odd) {
+  background-color: #ffffff;
 }
-
-.card {
-  padding: 2em;
+th {
+  width: 80px;
+  height: 50px;
 }
-
-.read-the-docs {
-  color: #888;
+td {
+  height: 80px;
+  vertical-align: bottom;
+}
+.time {
+  /* position: fixed; */
+  overflow: scroll;
+  left: 6px;
+  z-index: 1;
+}
+.tableHead {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+input[type="date"] {
+  position: relative;
+  padding: 0 10px;
+  height: 36px;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #999;
 }

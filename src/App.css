@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans",
+    "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 table {
   position: relative;
@@ -7,8 +10,32 @@ table {
   border-collapse: collapse;
 }
 .point {
+  position: absolute;
+  border-radius: 100%;
+  background: red;
+  z-index: 5;
   width: 10px;
   height: 10px;
+  cursor: pointer;
+}
+.point:hover:before {
+  content: attr(data-time);
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%) translateY(-100%);
+  left: 50%;
+  font-size: 12px;
+  background: rgba(91, 91, 91, 0.3);
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+thead {
+  z-index: 10;
+}
+
+.table_root {
+  position: relative;
 }
 tr {
   height: 60px;
@@ -24,7 +51,7 @@ th {
   height: 50px;
 }
 td {
-  height: 80px;
+  height: 60px;
   vertical-align: bottom;
 }
 .time {

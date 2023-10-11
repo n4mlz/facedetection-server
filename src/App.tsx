@@ -25,25 +25,36 @@ const Table: React.FC<{
     times.push(<Row key={i} data={props.data}>{`${i + 1}時`}</Row>);
   }
   return (
-    <>
-      {Object.keys(props.data).map((person) => (
-        <>
-          {props.data[person].map((e) => (
-            <div style={{ top: `${(new Date(e)).getHours() * 60 + (new Date(e)).getMinutes()}px` }} >{(new Date(e)).toLocaleString() + e}</div>
-            
-          ))}
-        </>
-      ))}
+    <div className="table_root">
       <table className="time">
-        <tr className="tableHead">
+        <thead className="tableHead">
           <th className="table"></th>
           {Object.keys(props.data).map((e) => (
             <th key={e}>{e}</th>
           ))}
-        </tr>
+        </thead>
         <tbody>{times}</tbody>
       </table>
-    </>
+      {Object.keys(props.data).map((person, count) => (
+        <>
+          {props.data[person].map((e, t) => (
+            <div
+              className="point"
+              key={t}
+              data-time={new Date(Number(e) * 1000).toLocaleTimeString()}
+              style={{
+                top: `${
+                  new Date(Number(e) * 1000).getHours() * 60 +
+                  new Date(Number(e) * 1000).getMinutes() -
+                  10
+                }px`,
+                left: `${(count + 1) * 80 + 40}px `,
+              }}
+            ></div>
+          ))}
+        </>
+      ))}
+    </div>
   );
 };
 type timeData = {

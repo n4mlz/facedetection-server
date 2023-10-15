@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans",
+    "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+table {
+  position: relative;
+  left: 80px;
+  border-collapse: collapse;
+}
+.point {
+  position: absolute;
+  border-radius: 100%;
+  background: red;
+  z-index: 5;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.point:hover:before {
+  content: attr(data-time);
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%) translateY(-100%);
+  left: 50%;
+  font-size: 12px;
+  background: rgba(91, 91, 91, 0.3);
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+thead {
+  z-index: 10;
+}
+
+.table_root {
+  position: relative;
+}
+tr {
+  height: 60px;
+}
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+th {
+  width: 80px;
+  height: 50px;
+}
+td {
+  height: 60px;
+  vertical-align: bottom;
+}
+.time {
+  /* position: fixed; */
+  overflow: scroll;
+  left: 6px;
+  z-index: 1;
+}
+.tableHead {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+input[type="date"] {
+  position: relative;
+  padding: 0 10px;
+  height: 36px;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #999;
+}
